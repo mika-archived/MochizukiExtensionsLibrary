@@ -3,11 +3,11 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  *------------------------------------------------------------------------------------------*/
 
+#if UNITY_EDITOR
+
 using UnityEditor.Animations;
 
 using UnityEngine;
-
-#if UNITY_EDITOR
 
 namespace Mochizuki.VRChat.Extensions.Unity
 {
