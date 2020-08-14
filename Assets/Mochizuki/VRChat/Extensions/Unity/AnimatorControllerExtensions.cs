@@ -14,6 +14,8 @@ using Mochizuki.VRChat.Extensions.System;
 using UnityEditor;
 using UnityEditor.Animations;
 
+using UnityEngine;
+
 namespace Mochizuki.VRChat.Extensions.Unity
 {
     public static class AnimatorControllerExtensions
@@ -90,9 +92,17 @@ namespace Mochizuki.VRChat.Extensions.Unity
             foreach (var stateMachine in InstanceCaches<AnimatorStateMachine>.Caches)
                 AssetDatabase.AddObjectToAsset(stateMachine, source);
 
+            foreach (var transition in InstanceCaches<AnimatorStateTransition>.Caches)
+                AssetDatabase.AddObjectToAsset(transition, source);
+
+            foreach (var behaviour in InstanceCaches<StateMachineBehaviour>.Caches)
+                AssetDatabase.AddObjectToAsset(behaviour, source);
+
             // Cleanup All Caches
             InstanceCaches<AnimatorState>.Clear();
             InstanceCaches<AnimatorStateMachine>.Clear();
+            InstanceCaches<AnimatorStateTransition>.Clear();
+            InstanceCaches<StateMachineBehaviour>.Clear();
         }
     }
 }
