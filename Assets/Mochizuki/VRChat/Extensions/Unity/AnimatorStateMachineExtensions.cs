@@ -9,6 +9,8 @@ using System;
 
 using UnityEditor.Animations;
 
+using UnityEngine;
+
 namespace Mochizuki.VRChat.Extensions.Unity
 {
     public static class AnimatorStateMachineExtensions
@@ -27,13 +29,7 @@ namespace Mochizuki.VRChat.Extensions.Unity
             };
 
             foreach (var sourceState in source.states)
-            {
-                var state = dest.AddState(sourceState.state.name);
-                state.Apply(sourceState.state);
-
-                if (InstanceCaches<AnimatorState>.Find(sourceState.state.GetInstanceID()) == null)
-                    InstanceCaches<AnimatorState>.Register(sourceState.state.GetInstanceID(), state);
-            }
+                dest.AddState(InstanceCaches<AnimatorState>.FindOrCreate(sourceState.state, w => w.CloneDeep()), sourceState.position);
 
             foreach (var sourceTransition in source.anyStateTransitions)
             {
@@ -48,6 +44,10 @@ namespace Mochizuki.VRChat.Extensions.Unity
                     throw new ArgumentNullException(nameof(transition));
 
                 sourceTransition.CloneTo(transition);
+
+                // should always false
+                if (InstanceCaches<AnimatorStateTransition>.Find(sourceTransition.GetInstanceID()) == null)
+                    InstanceCaches<AnimatorStateTransition>.Register(sourceTransition.GetInstanceID(), transition);
             }
 
             foreach (var sourceTransition in source.entryTransitions)
@@ -63,12 +63,19 @@ namespace Mochizuki.VRChat.Extensions.Unity
                     throw new ArgumentNullException(nameof(transition));
 
                 transition.CloneTo(sourceTransition);
+
+                // should always false
+                if (InstanceCaches<AnimatorTransition>.Find(sourceTransition.GetInstanceID()) == null)
+                    InstanceCaches<AnimatorTransition>.Register(sourceTransition.GetInstanceID(), transition);
             }
 
             foreach (var sourceBehaviour in source.behaviours)
             {
                 var behaviour = dest.AddStateMachineBehaviour(sourceBehaviour.GetType());
                 sourceBehaviour.CloneDeepTo(behaviour);
+
+                // store
+                InstanceCaches<StateMachineBehaviour>.Register(behaviour.GetInstanceID(), behaviour);
             }
 
             foreach (var sourceStateMachine in source.stateMachines)

@@ -10,6 +10,8 @@ using System.Linq;
 
 using UnityEditor.Animations;
 
+using UnityEngine;
+
 namespace Mochizuki.VRChat.Extensions.Unity
 {
     public static class AnimatorStateExtensions
@@ -39,12 +41,17 @@ namespace Mochizuki.VRChat.Extensions.Unity
             dest.timeParameter = source.timeParameter;
             dest.timeParameterActive = source.timeParameterActive;
             dest.writeDefaultValues = source.writeDefaultValues;
+            dest.name = source.name;
             dest.hideFlags = source.hideFlags;
 
             foreach (var sourceTransition in source.transitions.Where(w => w.isExit))
             {
                 var transition = dest.AddExitTransition(false);
                 sourceTransition.CloneTo(transition);
+
+                // should always false
+                if (InstanceCaches<AnimatorStateTransition>.Find(sourceTransition.GetInstanceID()) == null)
+                    InstanceCaches<AnimatorStateTransition>.Register(sourceTransition.GetInstanceID(), transition);
             }
 
             foreach (var sourceTransition in source.transitions.Where(w => !w.isExit))
@@ -60,12 +67,19 @@ namespace Mochizuki.VRChat.Extensions.Unity
                     throw new ArgumentNullException(nameof(transition));
 
                 sourceTransition.CloneTo(transition);
+
+                // should always false
+                if (InstanceCaches<AnimatorStateTransition>.Find(sourceTransition.GetInstanceID()) == null)
+                    InstanceCaches<AnimatorStateTransition>.Register(sourceTransition.GetInstanceID(), transition);
             }
 
             foreach (var sourceBehaviour in source.behaviours)
             {
                 var behaviour = dest.AddStateMachineBehaviour(sourceBehaviour.GetType());
                 sourceBehaviour.CloneDeepTo(behaviour);
+
+                // store
+                InstanceCaches<StateMachineBehaviour>.Register(behaviour.GetInstanceID(), behaviour);
             }
         }
     }
