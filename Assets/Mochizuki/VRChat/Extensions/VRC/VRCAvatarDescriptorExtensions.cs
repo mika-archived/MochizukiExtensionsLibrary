@@ -66,7 +66,6 @@ namespace Mochizuki.VRChat.Extensions.VRC
                 case VRCAvatarDescriptor.AnimLayerType.FX:
                     return avatar.baseAnimationLayers.First(w => w.type == layer);
 
-                case VRCAvatarDescriptor.AnimLayerType.SpecialIK:
                 case VRCAvatarDescriptor.AnimLayerType.Sitting:
                 case VRCAvatarDescriptor.AnimLayerType.TPose:
                 case VRCAvatarDescriptor.AnimLayerType.IKPose:
@@ -90,7 +89,6 @@ namespace Mochizuki.VRChat.Extensions.VRC
                     avatar.baseAnimationLayers[bIndex] = animation;
                     break;
 
-                case VRCAvatarDescriptor.AnimLayerType.SpecialIK:
                 case VRCAvatarDescriptor.AnimLayerType.Sitting:
                 case VRCAvatarDescriptor.AnimLayerType.TPose:
                 case VRCAvatarDescriptor.AnimLayerType.IKPose:
