@@ -1,0 +1,22 @@
+{
+  "name": "moe.mochizuki.extensions-library",
+  "version": "2021.02.23.11.41",
+  "repository": "git@github.com:mika-f/VRChat-ExtensionsLibrary.git",
+  "author": "Natsuneko",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "husky": "^5.1.1",
+    "lint-staged": "^10.5.4",
+    "prettier-package-json": "^2.1.3"
+  },
+  "scripts": {
+    "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "Assets/**/package.json": [
+      "prettier-package-json --write",
+      "git add"
+    ]
+  }
+}
