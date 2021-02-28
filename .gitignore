@@ -189,6 +189,7 @@ InitTestScene*.unity
 
 # Imported Assets
 [Aa]ssets/Booth*
+[Aa]ssets/Gizmos*
 [Aa]ssets/NuGet*
 [Aa]ssets/Packages*
 [Aa]ssets/SerializedUdonPrograms*
