@@ -195,6 +195,7 @@ InitTestScene*.unity
 [Aa]ssets/Udon*
 [Aa]ssets/VRChat Examples*
 [Aa]ssets/VRCSDK*
+[Pp]ackages/com.vrchat.vrcsdk3*
 
 # Unlinked
 [Aa]ssets/**/LICENSE
