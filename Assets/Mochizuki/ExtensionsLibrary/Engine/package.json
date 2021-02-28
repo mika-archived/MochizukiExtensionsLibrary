@@ -1,0 +1,15 @@
+{
+  "name": "moe.mochizuki.extensions-library.engine",
+  "description": "",
+  "license": "MIT",
+  "version": "2021.02.23.11.41",
+  "scripts": {
+    "prepublishOnly": "cp ../../../LICENSE ./LICENSE"
+  },
+  "dependencies": {},
+  "keywords": [
+    ""
+  ],
+  "displayName": "Mochizuki.ExtensionsLibrary.Engine",
+  "unity": "2018.4"
+}

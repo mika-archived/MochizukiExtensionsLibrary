@@ -1,0 +1,16 @@
+{
+    "name": "Mochizuki.ExtensionsLibrary.Compat",
+    "references": [
+        "Mochizuki.ExtensionsLibrary.Editor",
+        "Mochizuki.ExtensionsLibrary.Engine",
+        "Mochizuki.ExtensionsLibrary.Runtime"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
