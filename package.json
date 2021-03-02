@@ -4,7 +4,7 @@
   "license": "MIT",
   "author": "Natsuneko",
   "repository": "git@github.com:mika-f/VRChat-ExtensionsLibrary.git",
-  "version": "2021.02.23.11.41",
+  "version": "1.0.0",
   "workspaces": [
     "Assets/Mochizuki/**"
   ],
