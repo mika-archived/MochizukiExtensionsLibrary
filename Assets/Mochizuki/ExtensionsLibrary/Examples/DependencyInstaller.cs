@@ -1,32 +1,8 @@
-# .NET Extension Library for Unity and VRChat
+﻿/*-------------------------------------------------------------------------------------------
+ * Copyright (c) Natsuneko. All rights reserved.
+ * Licensed under the MIT License. See LICENSE in the project root for license information.
+ *------------------------------------------------------------------------------------------*/
 
-.NET Extensions Library for Unity (and VRChat).
-
-## Packages
-
-| Package Namespace                         | Namespace                             | Version | Description                                          |
-| ----------------------------------------- | ------------------------------------- | ------- | ---------------------------------------------------- |
-| `moe.mochizuki.extensions-library.avatar` | `Mochizuki.ExtensionsLibrary.Avatar`  | `1.0.0` | class library for VRChat SDK3 Avatars                |
-| `moe.mochizuki.extensions-library.compat` | `Mochizuki.ExtensionsLibrary.Compat`  | `1.0.0` | compatible classes for migrating from older versions |
-| `moe.mochizuki.extensions-library.dotnet` | `Mochizuki.ExtensionsLibrary.Runtime` | `1.0.0` | .NET extension classes for .NET 4.5                  |
-| `moe.mochizuki.extensions-library.editor` | `Mochizuki.ExtensionsLibrary.Editor`  | `1.0.0` | .NET extension classes for UnityEngine.Editor        |
-| `moe.mochizuki.extensions-library.engine` | `Mochizuki.ExtensionsLibrary.Engine`  | `1.0.0` | Unity C# scripts                                     |
-| `moe.mochizuki.extensions-library.usharp` | `Mochizuki.ExtensionsLibrary.USharp`  | `1.0.0` | class library for VRChat SDK3 World (UdonSharp)      |
-
-## Requirements
-
-- Unity 2018.4.20f1 or greater
-- VRCSDK3 Avatars 2021.02.23.11.41 or greater (`~.avatar` package)
-- VRCSDK3 World 2021.02.23.11.40 or greater (`~.usharp` package)
-- UdonSharp 0.19.3 or greater (`~.usharp` package)
-
-## How to use
-
-I recommend installing these libraries later via UPM rather than including them in UnityPackage.  
-This can be achieved by including the following code in the UnityPackage Editor Script.
-
-```csharp
-// In Unity 2018.x
 using System;
 using System.IO;
 using System.Linq;
@@ -79,7 +55,7 @@ namespace Mochizuki.ExtensionsLibrary.Examples
                 if (localPackages.All(w => $"{w.name}@{w.version}" != $"{dependency}@{VERSION}"))
                     Install($"{dependency}@{VERSION}");
 
-            ClearLogs();
+            // ClearLogs();
         }
 
         private static void ClearLogs()
@@ -155,17 +131,3 @@ namespace Mochizuki.ExtensionsLibrary.Examples
         }
     }
 }
-```
-
-## Documentation
-
-https://docs.mochizuki.moe/extensions-library/
-
-## Development
-
-- Unity 2018.4.20f1
-- Node.js 14.x with Yarn v1
-
-## License
-
-MIT by [@6jz](https://twitter.com/6jz)

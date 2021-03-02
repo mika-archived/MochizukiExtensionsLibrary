@@ -1,4 +1,16 @@
 {
+  "scopedRegistries": [
+    {
+      "name": "Mochizuki",
+      "url": "https://registry.npmjs.com",
+      "scopes": ["moe.mochizuki"]
+    },
+    {
+      "name": "Mochizuki",
+      "url": "https://registry.npmjs.com",
+      "scopes": ["dev.mochizuki"]
+    }
+  ],
   "dependencies": {
     "com.unity.ads": "2.0.8",
     "com.unity.analytics": "3.2.3",
