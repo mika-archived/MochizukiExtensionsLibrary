@@ -38,8 +38,9 @@ namespace Mochizuki.ExtensionsLibrary.Examples
 
         static DependencyInstaller()
         {
-            ListRequest = Client.List(true);
-            EditorApplication.update += OnUpdate;
+            // When actually using this code, please uncomment the following two lines.
+            // ListRequest = Client.List(true);
+            // EditorApplication.update += OnUpdate;
         }
 
         private static void OnUpdate()
