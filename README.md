@@ -163,8 +163,20 @@ https://docs.mochizuki.moe/extensions-library/
 
 ## Development
 
+### Requirements
+
 - Unity 2018.4.20f1
 - Node.js 14.x with Yarn v1
+- VRCSDK3 Avatars 2021.02.23.11.41 or greater
+- VRCSDK3 World 2021.02.23.11.40 or greater
+- UdonSharp 0.19.3 or greater
+
+### Contributing
+
+1. Fork and Clone this repository.
+2. Write the code
+3. Commit your works
+4. Create a new Pull Request.
 
 ## License
 
