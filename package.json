@@ -21,12 +21,10 @@
   },
   "lint-staged": {
     "package.json": [
-      "prettier-package-json --write",
-      "git add"
+      "prettier-package-json --write"
     ],
     "Assets/**/package.json": [
-      "prettier-package-json --write",
-      "git add"
+      "prettier-package-json --write"
     ]
   }
 }
