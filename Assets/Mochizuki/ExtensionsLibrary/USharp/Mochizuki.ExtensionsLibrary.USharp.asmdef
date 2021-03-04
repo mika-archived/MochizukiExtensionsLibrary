@@ -1,0 +1,21 @@
+{
+    "name": "Mochizuki.ExtensionsLibrary.USharp",
+    "references": [
+        "Mochizuki.ExtensionsLibrary.Compat",
+        "Mochizuki.ExtensionsLibrary.Editor",
+        "Mochizuki.ExtensionsLibrary.Engine",
+        "Mochizuki.ExtensionsLibrary.Runtime",
+        "UdonSharp.Editor",
+        "UdonSharp.Runtime",
+        "VRC.Udon",
+        "VRC.Udon.Editor"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

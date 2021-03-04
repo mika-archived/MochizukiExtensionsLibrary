@@ -1,0 +1,19 @@
+{
+    "name": "Mochizuki.ExtensionsLibrary.Avatar",
+    "references": [
+        "Mochizuki.ExtensionsLibrary.Compat",
+        "Mochizuki.ExtensionsLibrary.Editor",
+        "Mochizuki.ExtensionsLibrary.Engine",
+        "Mochizuki.ExtensionsLibrary.Runtime"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
